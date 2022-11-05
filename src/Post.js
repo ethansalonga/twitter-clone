@@ -10,22 +10,22 @@ import PublishIcon from '@mui/icons-material/Publish'
 function Post({ displayName, username, verified, text, image, avatar }) {
   return <div className="post">
     <div className="post__avatar">
-      <Avatar src="https://media-exp1.licdn.com/dms/image/C4D03AQH5-vBMsJPW0Q/profile-displayphoto-shrink_800_800/0/1636484250547?e=1672876800&v=beta&t=TSz9iMnl_aMF7Y28l033x0rhtVViOLXJcRKfkCuT62U" />
+      <Avatar src={avatar} />
     </div>
     <div className="post__body">
       <div className="post__header">
         <div className="post__headerText">
           <h3>
-            Ethan Salonga <span className="post__headerSpecial">
-              <VerifiedIcon className="post__badge" />{" "} @ethansalonga
+            {displayName} <span className="post__headerSpecial">
+              {verified && <VerifiedIcon className="post__badge" />}{" "} @{username}
             </span>
           </h3>
         </div>
         <div className="post__headerDescription">
-          <p>A man chooses. A slave obeys.</p>
+          <p>{text}</p>
         </div>
       </div>
-      <img src="https://media.giphy.com/media/O9VvyvGXtEnp4pcN1d/giphy.gif" alt="" />
+      <img src={image} alt="" />
       <div className="post__footer">
         <ChatBubbleOutlineIcon fontSize="small" />
         <RepeatIcon fontSize="small" />
